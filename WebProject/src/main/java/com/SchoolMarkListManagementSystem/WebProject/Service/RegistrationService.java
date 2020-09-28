@@ -43,7 +43,7 @@ public class RegistrationService {
 	MarkTableRepository markRepository;
 	
 	public String studentRegistrationForm(Student student) {
-		 
+		
 		if(studentRepository.save(student) != null) {
 			return "Successfully registered the form";
 		}else {
@@ -104,4 +104,5 @@ public class RegistrationService {
 			return "Failesd to Update the Account Password";
 		}
 	}
+	
 }

@@ -71,4 +71,5 @@ public class RegistrationController {
 		String pas=registrationService.signUp(password);
 		return pas;
 	}
+	
 }
