@@ -18,4 +18,14 @@ public interface StudentRepository extends JpaRepository<Student, String>{
 	@Modifying
 	@Query("update Student s set s.mobileNum=?1 where s.stdId=?2")
 	public int updateStudentMobile(String mobileNum,String stdId);
+	
+	@Transactional
+	@Modifying
+	@Query("update Student s set s.mailId=?1 where s.stdId=?2")
+	public int updateStudentMail(String mailId,String stdId);
+	
+	@Transactional
+	@Modifying
+	@Query("update Student s set s.language=?1 where s.stdId=?2")
+	public int updateStudentLang(String language,String stdId);
 }  

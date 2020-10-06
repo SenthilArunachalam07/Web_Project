@@ -1,5 +1,7 @@
 package com.SchoolMarkListManagementSystem.WebProject.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -102,6 +104,23 @@ public class RegistrationService {
 			return "Update your Account Password";
 		}else {
 			return "Failesd to Update the Account Password";
+		}
+	}
+	
+	public String login(PassTableStaff password) {
+		List<PassTableStaff> li = passwordRepository.getUser(password.getStaffId(),password.getPass());
+		String a = null;
+		String b = null;
+		
+			for (PassTableStaff ps: li) {
+				a = ps.getStaffId();
+				b = ps.getPass();
+			}
+				
+		if(a != null && b != null) {	
+			return "Successfully Loged In";
+		}else {
+			return "login Faied";
 		}
 	}
 	

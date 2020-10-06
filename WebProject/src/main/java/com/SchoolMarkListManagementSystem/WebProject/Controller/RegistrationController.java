@@ -72,4 +72,9 @@ public class RegistrationController {
 		return pas;
 	}
 	
+	@PostMapping("/login")
+	public String loginForm(@RequestBody PassTableStaff password) {
+		String pas=registrationService.login(password);
+		return pas;
+	}
 }
